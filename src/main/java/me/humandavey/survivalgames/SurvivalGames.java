@@ -1,12 +1,12 @@
-package me.humandavey.template;
+package me.humandavey.survivalgames;
 
-import me.humandavey.template.command.commands.ExampleCommand;
-import me.humandavey.template.nametag.NametagManager;
+import me.humandavey.survivalgames.command.commands.ExampleCommand;
+import me.humandavey.survivalgames.nametag.NametagManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Template extends JavaPlugin {
+public final class SurvivalGames extends JavaPlugin {
 
-	private static Template instance;
+	private static SurvivalGames instance;
 
 	@Override
 	public void onEnable() {
@@ -40,7 +40,7 @@ public final class Template extends JavaPlugin {
 		new ExampleCommand();
 	}
 
-	public static Template getInstance() {
+	public static SurvivalGames getInstance() {
 		return instance;
 	}
 }

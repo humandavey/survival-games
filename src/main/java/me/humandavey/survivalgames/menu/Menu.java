@@ -1,6 +1,6 @@
-package me.humandavey.template.menu;
+package me.humandavey.survivalgames.menu;
 
-import me.humandavey.template.Template;
+import me.humandavey.survivalgames.SurvivalGames;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -26,7 +26,7 @@ public class Menu implements Listener {
 		this.inventory = Bukkit.createInventory(null, rows * 9, name);
 		this.name = name;
 		this.rows = rows;
-		Template.getInstance().getServer().getPluginManager().registerEvents(this, Template.getInstance());
+		SurvivalGames.getInstance().getServer().getPluginManager().registerEvents(this, SurvivalGames.getInstance());
 	}
 
 	public Menu(String name, HashMap<Integer, ItemStack> items) {
@@ -42,7 +42,7 @@ public class Menu implements Listener {
 			setItemAt(item.getKey(), item.getValue());
 		}
 		this.rows = rows;
-		Template.getInstance().getServer().getPluginManager().registerEvents(this, Template.getInstance());
+		SurvivalGames.getInstance().getServer().getPluginManager().registerEvents(this, SurvivalGames.getInstance());
 	}
 
 	@EventHandler

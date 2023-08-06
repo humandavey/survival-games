@@ -1,8 +1,8 @@
-package me.humandavey.template.menu.menus;
+package me.humandavey.survivalgames.menu.menus;
 
-import me.humandavey.template.menu.Menu;
-import me.humandavey.template.util.Util;
-import me.humandavey.template.util.item.ItemBuilder;
+import me.humandavey.survivalgames.menu.Menu;
+import me.humandavey.survivalgames.util.Util;
+import me.humandavey.survivalgames.util.item.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

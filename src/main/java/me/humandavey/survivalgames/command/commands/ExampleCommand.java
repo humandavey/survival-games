@@ -1,9 +1,8 @@
-package me.humandavey.template.command.commands;
+package me.humandavey.survivalgames.command.commands;
 
-import me.humandavey.template.command.Command;
-import me.humandavey.template.nametag.NametagManager;
-import me.humandavey.template.scoreboard.ScoreboardManager;
-import org.bukkit.ChatColor;
+import me.humandavey.survivalgames.command.Command;
+import me.humandavey.survivalgames.nametag.NametagManager;
+import me.humandavey.survivalgames.scoreboard.ScoreboardManager;
 import org.bukkit.entity.Player;
 
 import java.util.Random;
@@ -18,7 +17,6 @@ public class ExampleCommand extends Command {
 	public void execute(Player player, String[] args) {
 		player.sendMessage("You ran the example command and opened an example paged menu and your name has a random number in front!");
 		NametagManager.setPrefix(player, new Random().nextInt(0, 10) + "");
-		NametagManager.setColor(player, ChatColor.values()[new Random().nextInt(0, ChatColor.values().length - 1)]);
 
 		ScoreboardManager.setScoreboard(player, "Title", "line one", "second line");
 

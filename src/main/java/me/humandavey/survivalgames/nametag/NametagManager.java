@@ -1,7 +1,6 @@
-package me.humandavey.template.nametag;
+package me.humandavey.survivalgames.nametag;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,7 +38,6 @@ public class NametagManager implements Listener {
 			t.addEntry(target.getName());
 			t.setPrefix(target.getScoreboard().getTeam(target.getName() + "#" + uuid.toString()).getPrefix());
 			t.setSuffix(target.getScoreboard().getTeam(target.getName() + "#" + uuid.toString()).getSuffix());
-			t.setColor(target.getScoreboard().getTeam(target.getName() + "#" + uuid.toString()).getColor());
 		}
 
 		for (UUID uuid : scoreboards.keySet()) {
@@ -66,9 +64,6 @@ public class NametagManager implements Listener {
 			} catch (IllegalArgumentException ignored) {}
 
 			if (t != null && pt != null) {
-				if (pt.getColor() != null) {
-					t.setColor(pt.getColor());
-				}
 				t.setPrefix(pt.getPrefix());
 				t.setSuffix(pt.getSuffix());
 			}
@@ -87,12 +82,6 @@ public class NametagManager implements Listener {
 		}
 	}
 
-	public static void setColor(Player player, ChatColor color) {
-		for (UUID uuid : scoreboards.keySet()) {
-			scoreboards.get(uuid).getTeam(player.getName() + "#" + uuid.toString()).setColor(color);
-		}
-	}
-
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
 		addPlayer(event.getPlayer());
@@ -106,5 +95,4 @@ public class NametagManager implements Listener {
 			scoreboards.get(uuid).getTeam(event.getPlayer().getName() + "#" + uuid.toString()).unregister();
 		}
 	}
-
 }

@@ -1,13 +1,10 @@
-# Template [humandavey]
+# Survival Games [humandavey]
 
-This is a template project for spigot plugins
+A survival games plugin with modern features
 
 ## Features
 
-- Useful methods in `Util` class
-- `ItemBuilder` class for easy item creation
-- Entire menu system as well as paged menus
-- Command handler with easy tab completion
+- Coming soon...
 
 ## Support
 

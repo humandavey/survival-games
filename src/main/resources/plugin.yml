@@ -1,5 +1,5 @@
-name: Template
+name: SurvivalGames
 version: '${project.version}'
-main: me.humandavey.template.Template
-api-version: 1.19
+main: me.humandavey.survivalgames.SurvivalGames
+api-version: 1.8
 authors: [ humandavey ]

@@ -1,4 +1,4 @@
-package me.humandavey.template.util;
+package me.humandavey.survivalgames.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,8 +12,6 @@ import org.bukkit.potion.PotionEffect;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Util {
 
@@ -25,7 +23,6 @@ public class Util {
 		if (clearInv) {
 			player.getInventory().clear();
 			player.getInventory().setArmorContents(new ItemStack[4]);
-			player.getInventory().setItemInOffHand(null);
 		}
 		for (PotionEffect pe : player.getActivePotionEffects()) {
 			player.removePotionEffect(pe.getType());
@@ -34,8 +31,6 @@ public class Util {
 		player.setLevel(0);
 		player.setTotalExperience(0);
 		player.setAllowFlight(false);
-		player.setAbsorptionAmount(0);
-		player.resetTitle();
 	}
 
 	public static List<String> colorizeList(List<String> list) {
@@ -47,24 +42,9 @@ public class Util {
 	}
 
 	public static String colorize(String m) {
-		return ChatColor.translateAlternateColorCodes('&', translateHexColors(m));
+		return ChatColor.translateAlternateColorCodes('&', m);
 	}
 
-	public static String translateHexColors(String message) {
-		char COLOR_CHAR = ChatColor.COLOR_CHAR;
-		final Pattern hexPattern = Pattern.compile("&#([A-Fa-f0-9]{6})");
-		Matcher matcher = hexPattern.matcher(message);
-		StringBuilder buffer = new StringBuilder(message.length() + 4 * 8);
-		while (matcher.find()) {
-			String group = matcher.group(1);
-			matcher.appendReplacement(buffer, COLOR_CHAR + "x"
-					+ COLOR_CHAR + group.charAt(0) + COLOR_CHAR + group.charAt(1)
-					+ COLOR_CHAR + group.charAt(2) + COLOR_CHAR + group.charAt(3)
-					+ COLOR_CHAR + group.charAt(4) + COLOR_CHAR + group.charAt(5)
-			);
-		}
-		return matcher.appendTail(buffer).toString();
-	}
 
 	public static Location configToLocation(FileConfiguration fc, String path) {
 		if (fc.get(path) != null) {
@@ -187,8 +167,8 @@ public class Util {
 		SPACE(' ', 3),
 		DEFAULT('a', 4);
 
-		private char character;
-		private int length;
+		private final char character;
+		private final int length;
 
 		DefaultFontInfo(char character, int length) {
 			this.character = character;

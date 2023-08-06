@@ -1,4 +1,4 @@
-package me.humandavey.template.util.item;
+package me.humandavey.survivalgames.util.item;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -50,20 +50,12 @@ public class ItemBuilder {
 		return this;
 	}
 
-	public ItemBuilder setUnbreakable(boolean unbreakable) {
-		meta.setUnbreakable(unbreakable);
-		return this;
-	}
 
 	public ItemBuilder addEnchantment(Enchantment enchantment, int level) {
 		meta.addEnchant(enchantment, level, true);
 		return this;
 	}
 
-	public ItemBuilder setLocalizedName(String localizedName) {
-		meta.setLocalizedName(localizedName);
-		return this;
-	}
 
 	public ItemBuilder setLore(List<String> lore) {
 		meta.setLore(lore);

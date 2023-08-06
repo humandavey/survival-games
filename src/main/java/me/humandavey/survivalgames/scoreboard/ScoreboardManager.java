@@ -1,4 +1,4 @@
-package me.humandavey.template.scoreboard;
+package me.humandavey.survivalgames.scoreboard;
 
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
