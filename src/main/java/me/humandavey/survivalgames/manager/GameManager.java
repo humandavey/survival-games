@@ -1,5 +1,7 @@
 package me.humandavey.survivalgames.manager;
 
+import me.humandavey.survivalgames.SurvivalGames;
+import me.humandavey.survivalgames.instance.Countdown;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -8,8 +10,9 @@ import java.util.UUID;
 
 public class GameManager {
 
-	private GameState state = GameState.WAITING;
 	private final ArrayList<UUID> players = new ArrayList<>();
+	private GameState state = GameState.WAITING;
+	private Countdown countdown;
 
 	public void broadcast(String message) {
 		for (UUID uuid : players) {
@@ -34,5 +37,24 @@ public class GameManager {
 
 	public void addPlayer(Player player) {
 		players.add(player.getUniqueId());
+
+		if (SurvivalGames.getConfiguration().getMinPlayers() <= players.size() && countdown == null) {
+			countdown = new Countdown();
+			countdown.start();
+		}
+	}
+
+	public void removePlayer(Player player) {
+		players.remove(player.getUniqueId());
+
+		if (SurvivalGames.getConfiguration().getMinPlayers() > players.size() && countdown != null) {
+			cancelCountdown();
+		}
+	}
+
+	public void cancelCountdown() {
+		countdown.setCancel(true);
+		countdown.cancel();
+		countdown = null;
 	}
 }
