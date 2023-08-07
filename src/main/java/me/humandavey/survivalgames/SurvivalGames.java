@@ -1,12 +1,18 @@
 package me.humandavey.survivalgames;
 
-import me.humandavey.survivalgames.command.commands.ExampleCommand;
+import me.humandavey.survivalgames.config.Configuration;
+import me.humandavey.survivalgames.listener.JoinListener;
+import me.humandavey.survivalgames.manager.BlockManager;
+import me.humandavey.survivalgames.manager.GameManager;
 import me.humandavey.survivalgames.nametag.NametagManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SurvivalGames extends JavaPlugin {
 
 	private static SurvivalGames instance;
+	private static GameManager gameManager;
+	private static BlockManager blockManager;
+	private static Configuration configuration;
 
 	@Override
 	public void onEnable() {
@@ -29,15 +35,30 @@ public final class SurvivalGames extends JavaPlugin {
 	}
 
 	private void setupManagers() {
-
+		gameManager = new GameManager();
+		blockManager = new BlockManager();
+		configuration = new Configuration(getConfig());
 	}
 
 	private void registerListeners() {
 		getServer().getPluginManager().registerEvents(new NametagManager(), this);
+		getServer().getPluginManager().registerEvents(new JoinListener(), this);
 	}
 
 	private void registerCommands() {
-		new ExampleCommand();
+
+	}
+
+	public static GameManager getGameManager() {
+		return gameManager;
+	}
+
+	public static BlockManager getBlockManager() {
+		return blockManager;
+	}
+
+	public static Configuration getConfiguration() {
+		return configuration;
 	}
 
 	public static SurvivalGames getInstance() {
