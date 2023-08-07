@@ -25,15 +25,17 @@ spawnpoints:
   - "world;42.5;69;257.5"
   - "world;45.5;69;257.5"
 
-chest-locations:
-  - "world;45;65;251"
-
 placeable-blocks:
   - "CRAFTING_TABLE"
 
 breakable-blocks:
   - "GRASS"
   - "TALL_GRASS"
+
+chest-locations:
+  tier-1:
+    - "world;45;65;251"
+  tier-2:
 
 messages:
   no-permission: "&cYou don't have permission to use this command!"
@@ -42,4 +44,5 @@ messages:
   countdown-cancelled: "&cThe countdown has been cancelled!"
   player-left: "&7%player% &equit the game! (&b%num%&e/&b%max%&e)"
   game-force-started: "&7%player% &ehas forced started the countdown!"
+  success: "&aSuccess!"
   already-begun: "&cThe game has already begun!"

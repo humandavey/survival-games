@@ -10,6 +10,7 @@ public enum MessageUtil {
 	COUNTDOWN_CANCELLED("countdown-cancelled"),
 	PLAYER_LEFT("player-left"),
 	GAME_FORCE_STARTED("game-force-started"),
+	SUCCESS("success"),
 	ALREADY_BEGUN("already-begun");
 
 	private final String message;
