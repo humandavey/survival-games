@@ -2,6 +2,8 @@ package me.humandavey.survivalgames;
 
 import me.humandavey.survivalgames.config.Configuration;
 import me.humandavey.survivalgames.listener.JoinListener;
+import me.humandavey.survivalgames.listener.PlayerMoveListener;
+import me.humandavey.survivalgames.listener.PlayerQuitListener;
 import me.humandavey.survivalgames.manager.BlockManager;
 import me.humandavey.survivalgames.manager.GameManager;
 import me.humandavey.survivalgames.nametag.NametagManager;
@@ -43,6 +45,8 @@ public final class SurvivalGames extends JavaPlugin {
 	private void registerListeners() {
 		getServer().getPluginManager().registerEvents(new NametagManager(), this);
 		getServer().getPluginManager().registerEvents(new JoinListener(), this);
+		getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
+		getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 	}
 
 	private void registerCommands() {
