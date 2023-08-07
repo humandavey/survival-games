@@ -2,6 +2,7 @@ package me.humandavey.survivalgames.config;
 
 import me.humandavey.survivalgames.util.Util;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
@@ -36,5 +37,21 @@ public class Configuration {
 			locations.add(Util.stringToLocation(spawnpoint, ";"));
 		});
 		return locations;
+	}
+
+	public ArrayList<Material> getBreakableBlocks() {
+		ArrayList<Material> mats = new ArrayList<>();
+		config.getStringList("breakable-blocks").forEach(mat -> {
+			mats.add(Material.getMaterial(mat));
+		});
+		return mats;
+	}
+
+	public ArrayList<Material> getPlaceableBlocks() {
+		ArrayList<Material> mats = new ArrayList<>();
+		config.getStringList("placeable-blocks").forEach(mat -> {
+			mats.add(Material.getMaterial(mat));
+		});
+		return mats;
 	}
 }

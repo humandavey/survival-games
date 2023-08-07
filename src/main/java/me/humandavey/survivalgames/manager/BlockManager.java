@@ -1,5 +1,6 @@
 package me.humandavey.survivalgames.manager;
 
+import me.humandavey.survivalgames.SurvivalGames;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
@@ -8,18 +9,18 @@ import java.util.ArrayList;
 public class BlockManager {
 
 	public boolean canBreak(Block block) {
-		return true;
+		return getBreakableBlocks().contains(block.getType());
 	}
 
 	public boolean canPlace(Block block) {
-		return true;
+		return getPlaceableBlocks().contains(block.getType());
 	}
 
 	private ArrayList<Material> getBreakableBlocks() {
-		return new ArrayList<>();
+		return SurvivalGames.getConfiguration().getBreakableBlocks();
 	}
 
 	private ArrayList<Material> getPlaceableBlocks() {
-		return new ArrayList<>();
+		return SurvivalGames.getConfiguration().getPlaceableBlocks();
 	}
 }
