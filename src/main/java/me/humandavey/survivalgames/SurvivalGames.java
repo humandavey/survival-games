@@ -1,5 +1,6 @@
 package me.humandavey.survivalgames;
 
+import me.humandavey.survivalgames.command.commands.StartCommand;
 import me.humandavey.survivalgames.config.Configuration;
 import me.humandavey.survivalgames.listener.JoinListener;
 import me.humandavey.survivalgames.listener.PlayerMoveListener;
@@ -50,7 +51,7 @@ public final class SurvivalGames extends JavaPlugin {
 	}
 
 	private void registerCommands() {
-
+		new StartCommand();
 	}
 
 	public static GameManager getGameManager() {
