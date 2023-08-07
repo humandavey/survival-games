@@ -6,6 +6,9 @@ public enum MessageUtil {
 
 	NO_PERMISSION("no-permission"),
 	PLAYER_JOINED("player-joined"),
+	GAME_STARTED("game-started"),
+	COUNTDOWN_CANCELLED("countdown-cancelled"),
+	PLAYER_LEFT("player-left"),
 	ALREADY_BEGUN("already-begun");
 
 	private final String message;

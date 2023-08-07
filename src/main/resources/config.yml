@@ -31,4 +31,7 @@ chest-locations:
 messages:
   no-permission: "&cYou don't have permission to use this command!"
   player-joined: "&7%player% &ejoined the game! (&b%num%&e/&b%max%&e)"
+  game-started: "&aThe battle has begun!"
+  countdown-cancelled: "&cThe countdown has been cancelled!"
+  player-left: "&7%player% &equit the game! (&b%num%&e/&b%max%&e)"
   already-begun: "&cThe game has already begun!"
