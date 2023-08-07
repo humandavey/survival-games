@@ -4,8 +4,10 @@ import me.humandavey.survivalgames.SurvivalGames;
 import me.humandavey.survivalgames.config.Configuration;
 import me.humandavey.survivalgames.manager.GameManager;
 import me.humandavey.survivalgames.manager.GameState;
+import me.humandavey.survivalgames.nametag.NametagManager;
 import me.humandavey.survivalgames.util.MessageUtil;
 import me.humandavey.survivalgames.util.Util;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,6 +34,8 @@ public class JoinListener implements Listener {
 					.replaceAll("%num%", gameManager.getPlayers().size() + "")
 					.replaceAll("%max%", configuration.getMaxPlayers() + "")
 			);
+
+			NametagManager.setColor(player, ChatColor.GRAY);
 		} else {
 			event.getPlayer().kickPlayer(MessageUtil.ALREADY_BEGUN.getMessage());
 		}
