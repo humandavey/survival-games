@@ -60,13 +60,17 @@ public class Util {
 	public static Location stringToLocation(String location, String split) {
 		String[] parts = location.split(split);
 		if (parts.length == 3) {
-			return new Location(Bukkit.getWorlds().get(0), Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+			return new Location(Bukkit.getWorlds().get(0), Double.parseDouble(parts[0]), Double.parseDouble(parts[1]), Double.parseDouble(parts[2]));
 		} else if (parts.length == 4) {
-			return new Location(Bukkit.getWorld(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(parts[3]));
+			return new Location(Bukkit.getWorld(parts[0]), Double.parseDouble(parts[1]), Double.parseDouble(parts[2]), Double.parseDouble(parts[3]));
 		} else if (parts.length == 6) {
-			return new Location(Bukkit.getWorld(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]), Integer.parseInt(parts[3]), Integer.parseInt(parts[4]), Integer.parseInt(parts[5]));
+			return new Location(Bukkit.getWorld(parts[0]), Double.parseDouble(parts[1]), Double.parseDouble(parts[2]), Double.parseDouble(parts[3]), Integer.parseInt(parts[4]), Integer.parseInt(parts[5]));
 		}
 		return null;
+	}
+
+	public static Location faceLocation(Location playerLocation, Location face) {
+		return playerLocation.setDirection(face.subtract(playerLocation).toVector());
 	}
 
 	public enum DefaultFontInfo {
