@@ -11,11 +11,13 @@ public class PlayerQuitListener implements Listener {
 	@EventHandler
 	public void onQuit(PlayerQuitEvent event) {
 		event.setQuitMessage(null);
+		if (SurvivalGames.getGameManager().getPlayers().contains(event.getPlayer())) {
+			SurvivalGames.getGameManager().broadcast(MessageUtil.PLAYER_LEFT.getMessage()
+					.replaceAll("%player%", event.getPlayer().getName())
+					.replaceAll("%num%", SurvivalGames.getGameManager().getPlayers().size() + "")
+					.replaceAll("%max%", SurvivalGames.getConfiguration().getMaxPlayers() + ""));
+		}
 
 		SurvivalGames.getGameManager().removePlayer(event.getPlayer());
-		SurvivalGames.getGameManager().broadcast(MessageUtil.PLAYER_LEFT.getMessage()
-				.replaceAll("%player%", event.getPlayer().getName())
-				.replaceAll("%num%", SurvivalGames.getGameManager().getPlayers().size() + "")
-				.replaceAll("%max%", SurvivalGames.getConfiguration().getMaxPlayers() + ""));
 	}
 }
