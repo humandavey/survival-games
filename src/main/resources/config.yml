@@ -41,4 +41,5 @@ messages:
   game-started: "&aThe battle has begun!"
   countdown-cancelled: "&cThe countdown has been cancelled!"
   player-left: "&7%player% &equit the game! (&b%num%&e/&b%max%&e)"
+  game-force-started: "&7%player% &ehas forced started the countdown!"
   already-begun: "&cThe game has already begun!"

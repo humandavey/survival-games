@@ -9,6 +9,7 @@ public enum MessageUtil {
 	GAME_STARTED("game-started"),
 	COUNTDOWN_CANCELLED("countdown-cancelled"),
 	PLAYER_LEFT("player-left"),
+	GAME_FORCE_STARTED("game-force-started"),
 	ALREADY_BEGUN("already-begun");
 
 	private final String message;
