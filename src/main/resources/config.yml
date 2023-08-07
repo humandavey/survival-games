@@ -28,6 +28,13 @@ spawnpoints:
 chest-locations:
   - "world;45;65;251"
 
+placeable-blocks:
+  - "CRAFTING_TABLE"
+
+breakable-blocks:
+  - "GRASS"
+  - "TALL_GRASS"
+
 messages:
   no-permission: "&cYou don't have permission to use this command!"
   player-joined: "&7%player% &ejoined the game! (&b%num%&e/&b%max%&e)"
