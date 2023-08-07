@@ -21,20 +21,6 @@ public class GameManager {
 		}
 	}
 
-	public ArrayList<Player> getPlayers() {
-		ArrayList<Player> p = new ArrayList<>();
-		players.forEach(uuid -> p.add(Bukkit.getPlayer(uuid)));
-		return p;
-	}
-
-	public void setState(GameState gameState) {
-		state = gameState;
-	}
-
-	public GameState getState() {
-		return state;
-	}
-
 	public void addPlayer(Player player) {
 		players.add(player.getUniqueId());
 
@@ -52,9 +38,30 @@ public class GameManager {
 		}
 	}
 
+	public void startCountdown() {
+		cancelCountdown();
+
+		countdown = new Countdown();
+		countdown.start();
+	}
+
 	public void cancelCountdown() {
 		countdown.setCancel(true);
 		countdown.cancel();
 		countdown = null;
+	}
+
+	public ArrayList<Player> getPlayers() {
+		ArrayList<Player> p = new ArrayList<>();
+		players.forEach(uuid -> p.add(Bukkit.getPlayer(uuid)));
+		return p;
+	}
+
+	public void setState(GameState gameState) {
+		state = gameState;
+	}
+
+	public GameState getState() {
+		return state;
 	}
 }
