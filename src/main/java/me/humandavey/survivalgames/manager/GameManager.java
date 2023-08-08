@@ -40,6 +40,15 @@ public class GameManager {
 		}
 	}
 
+	public void resetChests() {
+		for (Chest chest : SurvivalGames.getConfiguration().getChests(1)) {
+			chest.getInventory().clear();
+		}
+		for (Chest chest : SurvivalGames.getConfiguration().getChests(2)) {
+			chest.getInventory().clear();
+		}
+	}
+
 	public void broadcast(String message) {
 		for (UUID uuid : players) {
 			Player player = Bukkit.getPlayer(uuid);

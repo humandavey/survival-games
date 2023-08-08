@@ -1,12 +1,10 @@
 package me.humandavey.survivalgames;
 
+import me.humandavey.survivalgames.command.commands.ResetCommand;
 import me.humandavey.survivalgames.command.commands.SetupCommand;
 import me.humandavey.survivalgames.command.commands.StartCommand;
 import me.humandavey.survivalgames.config.Configuration;
-import me.humandavey.survivalgames.listener.BlockListener;
-import me.humandavey.survivalgames.listener.JoinListener;
-import me.humandavey.survivalgames.listener.PlayerMoveListener;
-import me.humandavey.survivalgames.listener.PlayerQuitListener;
+import me.humandavey.survivalgames.listener.*;
 import me.humandavey.survivalgames.manager.BlockManager;
 import me.humandavey.survivalgames.manager.GameManager;
 import me.humandavey.survivalgames.nametag.NametagManager;
@@ -57,11 +55,13 @@ public final class SurvivalGames extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
 		getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
 		getServer().getPluginManager().registerEvents(new BlockListener(), this);
+		getServer().getPluginManager().registerEvents(new DamageListener(), this);
 	}
 
 	private void registerCommands() {
 		new StartCommand();
 		new SetupCommand();
+		new ResetCommand();
 	}
 
 	public static GameManager getGameManager() {
