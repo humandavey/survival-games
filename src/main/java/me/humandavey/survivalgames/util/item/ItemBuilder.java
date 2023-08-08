@@ -24,6 +24,10 @@ public class ItemBuilder {
 	}
 
 	public ItemBuilder(FileConfiguration fc, String path) {
+		Material mat = Material.getMaterial(fc.getString(path + ".material"));
+		if (mat == null) {
+			throw new IllegalArgumentException(fc.getString(path + ".material") + " is not of valid Material type");
+		}
 		item = new ItemStack(Material.getMaterial(fc.getString(path + ".material")));
 		meta = item.getItemMeta();
 
