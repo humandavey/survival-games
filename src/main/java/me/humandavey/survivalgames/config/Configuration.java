@@ -2,10 +2,12 @@ package me.humandavey.survivalgames.config;
 
 import me.humandavey.survivalgames.SurvivalGames;
 import me.humandavey.survivalgames.util.Util;
+import me.humandavey.survivalgames.util.item.ItemBuilder;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +55,17 @@ public class Configuration {
 				chests.add(chest);
 			}
 		}
-
 		return chests;
+	}
+
+	public ArrayList<ItemStack> getItems(int tier) {
+		ArrayList<ItemStack> items = new ArrayList<>();
+
+		for (String i : config.getConfigurationSection("chest-items.tier-" + tier).getKeys(false)) {
+			items.add(new ItemBuilder(config, "chest-items.tier-" + tier + "." + i).build());
+		}
+
+		return items;
 	}
 
 	public ArrayList<Material> getBreakableBlocks() {

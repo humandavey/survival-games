@@ -1,63 +1,184 @@
-#-----------------------------#
+# -----------------------------#
 # Surival Games by humandavey #
-#-----------------------------#
+# -----------------------------#
 
 max-players: 16
 min-players: 2
 
-facing: "world;45.5;67;251.5"
+facing: world;45.5;67;251.5
 
 spawnpoints:
-  - "world;48.5;69;257.5"
-  - "world;50.5;69;256.5"
-  - "world;51.5;69;254.5"
-  - "world;51.5;69;251.5"
-  - "world;51.5;69;248.5"
-  - "world;50.5;69;246.5"
-  - "world;48.5;69;245.5"
-  - "world;45.5;69;245.5"
-  - "world;42.5;69;245.5"
-  - "world;40.5;69;246.5"
-  - "world;39.5;69;248.5"
-  - "world;39.5;69;251.5"
-  - "world;39.5;69;254.5"
-  - "world;40.5;69;256.5"
-  - "world;42.5;69;257.5"
-  - "world;45.5;69;257.5"
+  - world;48.5;69;257.5
+  - world;50.5;69;256.5
+  - world;51.5;69;254.5
+  - world;51.5;69;251.5
+  - world;51.5;69;248.5
+  - world;50.5;69;246.5
+  - world;48.5;69;245.5
+  - world;45.5;69;245.5
+  - world;42.5;69;245.5
+  - world;40.5;69;246.5
+  - world;39.5;69;248.5
+  - world;39.5;69;251.5
+  - world;39.5;69;254.5
+  - world;40.5;69;256.5
+  - world;42.5;69;257.5
+  - world;45.5;69;257.5
 
 placeable-blocks:
-  - "CRAFTING_TABLE"
+  - CRAFTING_TABLE
 
 breakable-blocks:
-  - "GRASS"
-  - "TALL_GRASS"
+  - GRASS
+  - TALL_GRASS
 
 chest-locations:
   tier-1:
-    - "world;45;65;251"
+    - world;45;65;251
+    - world;44;64;251
+    - world;44;63;252
+    - world;45;64;252
+    - world;46;63;252
+    - world;46;64;251
+    - world;46;63;250
+    - world;45;64;250
+    - world;44;63;250
   tier-2:
+    - world;69;63;287
+    - world;105;63;253
+    - world;26;73;249
+    - world;28;82;246
+    - world;34;82;260
+    - world;51;83;278
+    - world;77;76;252
+    - world;79;86;248
+    - world;107;89;249
+    - world;89;86;234
+    - world;26;64;211
+    - world;0;68;260
+    - world;1;63;242
+    - world;11;73;273
+    - world;72;91;270
+    - world;66;70;222
+    - world;65;80;221
 
 chest-items:
   tier-1:
     0:
-      material: "IRON_SWORD"
-      name: "Iron Sword"
-      lore:
-        - "The best Iron Sword you can find"
-      amount: 1
-      enchantments:
-        sharpness: 1
-        unbreaking: 3
-      unbreakable: true
+      material: COOKED_MUTTON
+      amount: 2
+    1:
+      material: RABBIT_STEW
+    2:
+      material: GOLDEN_APPLE
+    3:
+      material: BOW
+    4:
+      material: ARROW
+      amount: 6
+    5:
+      material: IRON_SWORD
+    6:
+      material: DIAMOND_SWORD
+    7:
+      material: FISHING_ROD
+    8:
+      material: TOTEM_OF_UNDYING
+    9:
+      material: DIAMOND_HELMET
+    10:
+      material: GOLDEN_HELMET
+    11:
+      material: CHAINMAIL_HELMET
+    12:
+      material: IRON_HELMET
+    13:
+      material: DIAMOND_CHESTPLATE
+    14:
+      material: GOLDEN_CHESTPLATE
+    15:
+      material: CHAINMAIL_CHESTPLATE
+    16:
+      material: IRON_CHESTPLATE
+    17:
+      material: DIAMOND_LEGGINGS
+    18:
+      material: GOLDEN_LEGGINGS
+    19:
+      material: CHAINMAIL_LEGGINGS
+    20:
+      material: IRON_LEGGIGNS
+    21:
+      material: DIAMOND_BOOTS
+    22:
+      material: GOLDEN_BOOTS
+    23:
+      material: CHAINMAIL_BOOTS
+    24:
+      material: IRON_BOOTS
   tier-2:
-
+    0:
+      material: APPLE
+      amount: 2
+    1:
+      material: PORKCHOP
+      amount: 3
+    2:
+      material: GOLDEN_APPLE
+    3:
+      material: BOW
+    4:
+      material: ARROW
+      amount: 6
+    5:
+      material: WOODEN_SWORD
+    6:
+      material: STONE_SWORD
+    7:
+      material: FISHING_ROD
+    8:
+      material: TOTEM_OF_UNDYING
+    9:
+      material: LEATHER_HELMET
+    10:
+      material: GOLDEN_HELMET
+    11:
+      material: CHAINMAIL_HELMET
+    12:
+      material: IRON_HELMET
+    13:
+      material: LEATHER_CHESTPLATE
+    14:
+      material: GOLDEN_CHESTPLATE
+    15:
+      material: CHAINMAIL_CHESTPLATE
+    16:
+      material: IRON_CHESTPLATE
+    17:
+      material: LEATHER_LEGGINGS
+    18:
+      material: GOLDEN_LEGGINGS
+    19:
+      material: CHAINMAIL_LEGGINGS
+    20:
+      material: IRON_LEGGIGNS
+    21:
+      material: LEATHER_BOOTS
+    22:
+      material: GOLDEN_BOOTS
+    23:
+      material: CHAINMAIL_BOOTS
+    24:
+      material: IRON_BOOTS
+    25:
+      material: DIAMONDS_BOOTS
 
 messages:
-  no-permission: "&cYou don't have permission to use this command!"
-  player-joined: "&7%player% &ejoined the game! (&b%num%&e/&b%max%&e)"
-  game-started: "&aThe battle has begun!"
-  countdown-cancelled: "&cThe countdown has been cancelled!"
-  player-left: "&7%player% &equit the game! (&b%num%&e/&b%max%&e)"
-  game-force-started: "&7%player% &ehas forced started the countdown!"
-  success: "&aSuccess!"
-  already-begun: "&cThe game has already begun!"
+  no-permission: '&cYou don''t have permission to use this command!'
+  player-joined: '&7%player% &ejoined the game! (&b%num%&e/&b%max%&e)'
+  game-started: '&aThe battle has begun!'
+  countdown-cancelled: '&cThe countdown has been cancelled!'
+  player-left: '&7%player% &equit the game! (&b%num%&e/&b%max%&e)'
+  game-force-started: '&7%player% &ehas forced started the countdown!'
+  success: '&aSuccess!'
+  already-begun: '&cThe game has already begun!'
