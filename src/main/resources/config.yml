@@ -107,7 +107,7 @@ chest-items:
     19:
       material: CHAINMAIL_LEGGINGS
     20:
-      material: IRON_LEGGIGNS
+      material: IRON_LEGGINGS
     21:
       material: DIAMOND_BOOTS
     22:
@@ -161,7 +161,7 @@ chest-items:
     19:
       material: CHAINMAIL_LEGGINGS
     20:
-      material: IRON_LEGGIGNS
+      material: IRON_LEGGINGS
     21:
       material: LEATHER_BOOTS
     22:
@@ -171,7 +171,7 @@ chest-items:
     24:
       material: IRON_BOOTS
     25:
-      material: DIAMONDS_BOOTS
+      material: DIAMOND_BOOTS
 
 messages:
   no-permission: '&cYou don''t have permission to use this command!'
