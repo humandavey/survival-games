@@ -42,6 +42,7 @@ public class Countdown extends BukkitRunnable {
 			SurvivalGames.getGameManager().broadcast(MessageUtil.GAME_STARTED.getMessage());
 			cancel();
 			SurvivalGames.getGameManager().setState(GameState.LIVE);
+			SurvivalGames.getGameManager().onStart();
 			isRunning = false;
 			return;
 		}
