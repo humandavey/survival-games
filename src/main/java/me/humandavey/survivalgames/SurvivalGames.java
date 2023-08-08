@@ -10,6 +10,8 @@ import me.humandavey.survivalgames.listener.PlayerQuitListener;
 import me.humandavey.survivalgames.manager.BlockManager;
 import me.humandavey.survivalgames.manager.GameManager;
 import me.humandavey.survivalgames.nametag.NametagManager;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SurvivalGames extends JavaPlugin {
@@ -21,6 +23,10 @@ public final class SurvivalGames extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		for (Player player : Bukkit.getOnlinePlayers()) {
+			player.kickPlayer("Survival Games is restarting and requires all players offline.");
+		}
+
 		instance = this;
 
 		setupConfigs();
