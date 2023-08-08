@@ -1,6 +1,9 @@
 package me.humandavey.survivalgames.util.item;
 
+import me.humandavey.survivalgames.util.Util;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -18,6 +21,27 @@ public class ItemBuilder {
 	public ItemBuilder(Material material) {
 		item = new ItemStack(material);
 		meta = item.getItemMeta();
+	}
+
+	public ItemBuilder(FileConfiguration fc, String path) {
+		item = new ItemStack(Material.getMaterial(fc.getString(path + ".material")));
+		meta = item.getItemMeta();
+
+		if (fc.getString(path + ".name") != null) {
+			meta.setDisplayName(Util.colorize(fc.getString(path + ".name")));
+		}
+		if (fc.getStringList(path + ".lore").size() != 0) {
+			meta.setLore(Util.colorize(fc.getStringList(path + ".lore")));
+		}
+		item.setAmount(fc.getInt(path + ".amount", 1));
+		setUnbreakable(fc.getBoolean(path + ".unbreakable", false));
+
+		if (fc.getConfigurationSection(path + ".enchantments") != null) {
+			for (String ench : fc.getConfigurationSection(path + ".enchantments").getKeys(false)) {
+				int level = fc.getInt(path + ".enchantments." + ench);
+				addEnchantment(Enchantment.getByKey(NamespacedKey.minecraft(ench)), level);
+			}
+		}
 	}
 
 	public ItemStack build() {
@@ -50,12 +74,20 @@ public class ItemBuilder {
 		return this;
 	}
 
+	public ItemBuilder setUnbreakable(boolean unbreakable) {
+		meta.setUnbreakable(unbreakable);
+		return this;
+	}
 
 	public ItemBuilder addEnchantment(Enchantment enchantment, int level) {
 		meta.addEnchant(enchantment, level, true);
 		return this;
 	}
 
+	public ItemBuilder setLocalizedName(String localizedName) {
+		meta.setLocalizedName(localizedName);
+		return this;
+	}
 
 	public ItemBuilder setLore(List<String> lore) {
 		meta.setLore(lore);

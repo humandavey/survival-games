@@ -37,6 +37,21 @@ chest-locations:
     - "world;45;65;251"
   tier-2:
 
+chest-items:
+  tier-1:
+    0:
+      material: "IRON_SWORD"
+      name: "Iron Sword"
+      lore:
+        - "The best Iron Sword you can find"
+      amount: 1
+      enchantments:
+        sharpness: 1
+        unbreaking: 3
+      unbreakable: true
+  tier-2:
+
+
 messages:
   no-permission: "&cYou don't have permission to use this command!"
   player-joined: "&7%player% &ejoined the game! (&b%num%&e/&b%max%&e)"

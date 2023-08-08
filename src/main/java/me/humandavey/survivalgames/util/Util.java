@@ -33,7 +33,7 @@ public class Util {
 		player.setAllowFlight(false);
 	}
 
-	public static List<String> colorizeList(List<String> list) {
+	public static List<String> colorize(List<String> list) {
 		List<String> strings = new ArrayList<>();
 		for (String s : list) {
 			strings.add(colorize(s));
@@ -44,7 +44,6 @@ public class Util {
 	public static String colorize(String m) {
 		return ChatColor.translateAlternateColorCodes('&', m);
 	}
-
 
 	public static Location configToLocation(FileConfiguration fc, String path) {
 		if (fc.get(path) != null) {
